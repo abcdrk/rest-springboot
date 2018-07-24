@@ -58,4 +58,12 @@ public class BlogController {
         blogRepository.delete(blogId);
         return true;
     }
+    
+    @GetMapping("/blog/exist/{id}")
+    public boolean exist(@PathVariable String id){
+        int blogId = Integer.parseInt(id);
+        return blogRepository.exists(blogId);
+
+    }
 }
+    
